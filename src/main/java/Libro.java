@@ -1,25 +1,48 @@
 public class Libro {
-    private String titolo;
-    private String autore;
-    private String ISBN;
-    private String genere;
-    private int valutazione; // un utente può assegnare un valore da 1 a 5
-    private StatoLettura statoLettura;
+    private final String titolo;
+    private final String autore;
+    private final String ISBN;
+    private final String genere;
+    private final int valutazione; // un utente può assegnare un valore da 1 a 5
+    private final StatoLettura statoLettura;
 
     public enum StatoLettura{
         DA_LEGGERE,
         IN_LETTURA,
         LETTO
     }
+    // Inner class
+    public static class Builder {
+        // Parametri obbligatori
+        private final String titolo;
+        private final String autore;
+        private final String ISBN;
 
-    public Libro(String titolo, String autore, String ISBN,
-                 String genere, int valutazione, StatoLettura statoLettura) {
-        this.titolo = titolo;
-        this.autore = autore;
-        this.ISBN = ISBN;
-        this.genere = genere;
-        this.valutazione = valutazione;
-        this.statoLettura = statoLettura;
+        // Parametri opzionali
+        private String genere = "";
+        private int valutazione = 1;
+        private StatoLettura statoLettura = StatoLettura.DA_LEGGERE;
+
+        public Builder(String titolo, String autore, String ISBN) {
+            this.titolo = titolo;
+            this.autore = autore;
+            this.ISBN = ISBN;
+        }
+
+        public Builder genere(String gen) { genere = gen; return this; }
+        public Builder valutazione(int val){ valutazione = val; return this; }
+        public Builder statoLettura(Libro.StatoLettura stato) {
+            statoLettura = stato; return this;
+        }
+        public Libro build() {return new Libro(this);}
+    }
+    private Libro(Builder builder){
+        this.titolo = builder.titolo;
+        this.autore = builder.autore;
+        this.ISBN = builder.ISBN;
+        this.genere = builder.genere;
+        this.valutazione = builder.valutazione;
+        this.statoLettura = builder.statoLettura;
     }
 
     // Getters e Setters
@@ -27,56 +50,28 @@ public class Libro {
         return titolo;
     }
 
-    public void setTitolo(String titolo) {
-        this.titolo = titolo;
-    }
-
     public String getAutore() {
         return autore;
-    }
-
-    public void setAutore(String autore) {
-        this.autore = autore;
     }
 
     public String getIsbn() {
         return ISBN;
     }
 
-    public void setIsbn(String ISBN) {
-        this.ISBN = ISBN;
-    }
-
     public String getGenere() {
         return genere;
-    }
-
-    public void setGenere(String genere) {
-        this.genere = genere;
     }
 
     public int getValutazione() {
         return valutazione;
     }
 
-    public void setValutazione(int valutazione) {
-        if (valutazione >= 1 && valutazione <= 5) {
-            this.valutazione = valutazione;
-        } else {
-            throw new IllegalArgumentException("La valutazione deve essere tra 1 e 5.");
-        }
-    }
-
     public StatoLettura getStatoLettura() {
         return statoLettura;
     }
 
-    public void setStatoLettura(StatoLettura statoLettura) {
-        this.statoLettura = statoLettura;
-    }
-
     @Override
     public String toString() {
-        return titolo + " - " + autore + " (" + statoLettura + ")";
+        return titolo + " - " + autore + " - " + ISBN + " (" + statoLettura + ")";
     }
 }
