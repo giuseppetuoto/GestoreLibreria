@@ -1,3 +1,5 @@
+package shapes.model;
+
 public class Libro {
     private final String titolo;
     private final String autore;
@@ -74,4 +76,18 @@ public class Libro {
     public String toString() {
         return titolo + " - " + autore + " - " + ISBN + " (" + statoLettura + ")";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Libro libro = (Libro) o;
+        return ISBN.equals(libro.ISBN);
+    }
+
+    @Override
+    public int hashCode() {
+        return ISBN.hashCode();
+    }
+
 }
