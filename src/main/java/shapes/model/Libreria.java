@@ -1,6 +1,7 @@
 package shapes.model;
 
 import memento.Memento;
+import shapes.model.strategy.Ricerca;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,16 @@ public class Libreria extends AbstractLibreria {
         libri.remove(libro);
         // bisogna notificare gli osservatori perchè cambia lo stato della Libreria
         notifyObservers(new LibreriaEvent(this));
+    }
+
+    public List<Libro> cercaLibri(Ricerca strategy) {
+        List<Libro> ret = new ArrayList<>();
+        for (Libro libro : libri) {
+            if (strategy.ricerca(libro)) {
+                ret.add(libro);
+            }
+        }
+        return ret;
     }
 
 
