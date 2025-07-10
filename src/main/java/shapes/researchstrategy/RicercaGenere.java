@@ -1,4 +1,4 @@
-package shapes.model.strategy;
+package shapes.researchstrategy;
 
 import shapes.model.Libro;
 
@@ -11,6 +11,6 @@ public class RicercaGenere implements Ricerca {
 
     @Override
     public boolean ricerca(Libro libro) {
-        return libro.getAutore().toLowerCase().contains(genere);
+        return libro.getGenere().toLowerCase().contains(genere);
     }
 }

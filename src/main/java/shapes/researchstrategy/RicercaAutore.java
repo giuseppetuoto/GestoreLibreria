@@ -1,4 +1,4 @@
-package shapes.model.strategy;
+package shapes.researchstrategy;
 
 import shapes.model.Libro;
 
