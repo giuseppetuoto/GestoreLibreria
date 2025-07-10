@@ -1,7 +1,7 @@
 package shapes.model;
 
 import memento.Memento;
-import shapes.model.strategy.Ricerca;
+import shapes.researchstrategy.Ricerca;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +66,11 @@ public class Libreria extends AbstractLibreria {
     // memorizza lo stato interno della libreria (istantanea)
     @Override
     public Memento getMemento() {
-        return new LibreriaMemento((ArrayList<Libro>) libri);
+        ArrayList<Libro> copia = new ArrayList<>();
+        for (Libro libro : libri) {
+            copia.add(libro.clone()); // o new Libro(libro)
+        }
+        return new LibreriaMemento(copia);
     }
 
     // riceve il Memento m e ripristina lo stato notificando gli osservatori

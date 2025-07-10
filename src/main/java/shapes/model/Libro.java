@@ -1,6 +1,6 @@
 package shapes.model;
 
-public class Libro {
+public class Libro implements Cloneable {
     private final String titolo;
     private final String autore;
     private final String ISBN;
@@ -22,7 +22,8 @@ public class Libro {
 
         // Parametri opzionali
         private String genere = "";
-        private int valutazione = 1;
+        private int valutazione = -1; // se il libro non è stato ancora letto completamente
+        // la valutazione è -1
         private StatoLettura statoLettura = StatoLettura.DA_LEGGERE;
 
         public Builder(String titolo, String autore, String ISBN) {
@@ -47,7 +48,7 @@ public class Libro {
         this.statoLettura = builder.statoLettura;
     }
 
-    // Getters e Setters
+    // Getters
     public String getTitolo() {
         return titolo;
     }
@@ -74,7 +75,8 @@ public class Libro {
 
     @Override
     public String toString() {
-        return titolo + " - " + autore + " - " + ISBN + " (" + statoLettura + ")";
+        return titolo + " - " + autore + " - " + ISBN + " - valutazione: " + valutazione +
+                " (" + statoLettura + ")";
     }
 
     @Override
@@ -88,6 +90,16 @@ public class Libro {
     @Override
     public int hashCode() {
         return ISBN.hashCode();
+    }
+
+    // nel metodo clone() mi basta chiamare la clone() di Object con super.clone() perchè
+    // i campi di Libro sono tutti immutabili per definizione
+    @Override
+    public Libro clone() {
+        try{
+            Libro clone = (Libro) super.clone();
+            return clone;
+        } catch (CloneNotSupportedException e) {throw new Error(e);}
     }
 
 }
