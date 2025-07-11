@@ -12,7 +12,7 @@ public interface LibreriaIF extends Originator {
 
     int getNumeroLibri();
 
-    void aggiungiLibro(Libro libro);
+    boolean aggiungiLibro(Libro libro);
 
     boolean modificaLibro(Libro libroVecchio, Libro libroNuovo);
 

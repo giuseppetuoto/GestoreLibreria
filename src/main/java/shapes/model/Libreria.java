@@ -1,5 +1,6 @@
 package shapes.model;
 
+import json.LibreriaJson;
 import memento.Memento;
 import shapes.researchstrategy.Ricerca;
 
@@ -30,10 +31,17 @@ public class Libreria extends AbstractLibreria {
         return libri.size();
     }
 
-    public void aggiungiLibro(Libro libro) {
+    public boolean aggiungiLibro(Libro libro) {
+        for(Libro l: libri) {
+            if (l.equals(libro)) { // equals è ridefinito nella classe Libro
+                System.out.println("ISBN già esistente nella tua libreria, riprova");
+                return false;
+            }
+        }
         libri.add(libro);
         // bisogna notificare gli osservatori perchè cambia lo stato della Libreria
         notifyObservers(new LibreriaEvent(this));
+        return true;
     }
 
     public boolean modificaLibro(Libro libroVecchio, Libro libroNuovo) {
@@ -93,4 +101,15 @@ public class Libreria extends AbstractLibreria {
     private record LibreriaMemento(ArrayList<Libro> libri) implements Memento {
     }
 
+
+    public void salvaSuFile(String file) {
+        LibreriaJson.salva(this.libri, file);
+    }
+
+    public void caricaDaFile(String file) {
+        List<Libro> loadedBook = LibreriaJson.carica(file);
+        this.libri.clear();
+        this.libri.addAll(loadedBook);
+        notifyObservers(new LibreriaEvent(this));
+    }
 }
