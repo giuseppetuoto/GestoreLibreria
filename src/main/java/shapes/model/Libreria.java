@@ -4,6 +4,7 @@ import memento.Memento;
 import shapes.researchstrategy.Ricerca;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 // ConcreteSubject
@@ -60,6 +61,13 @@ public class Libreria extends AbstractLibreria {
             }
         }
         return ret;
+    }
+
+    public List<Libro> ordina(Comparator<Libro> criterio) {
+        List<Libro> L = getLibri();
+        L.sort(criterio);
+        notifyObservers(new LibreriaEvent(this));
+        return L;
     }
 
 
