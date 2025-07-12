@@ -1,6 +1,6 @@
-package shapes.sortingstrategy;
+package core.sortingstrategy;
 
-import shapes.model.Libro;
+import core.model.Libro;
 
 import java.util.Comparator;
 
