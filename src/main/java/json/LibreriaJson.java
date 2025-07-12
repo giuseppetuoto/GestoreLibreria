@@ -3,7 +3,7 @@ package json;
 import jakarta.json.*;
 import jakarta.json.stream.JsonGenerator;
 import jakarta.json.stream.JsonGeneratorFactory;
-import shapes.model.Libro;
+import core.model.Libro;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// classe che contiene le funzionalità per caricare l'ultimo salvataggio e salvare la libreria
+// in un file json
 public class LibreriaJson {
 
     public static void salva(List<Libro> libri, String file) {

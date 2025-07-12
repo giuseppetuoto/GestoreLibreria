@@ -1,9 +1,9 @@
-package shapes.specificcommand;
+package core.specificcommand;
 
 import command.Command;
 import memento.Memento;
-import shapes.model.Libreria;
-import shapes.model.Libro;
+import core.model.Libreria;
+import core.model.Libro;
 
 public class EditCommand implements Command {
     private Memento m;

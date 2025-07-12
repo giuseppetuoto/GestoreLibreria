@@ -1,5 +1,5 @@
-import shapes.model.Libreria;
-import shapes.model.Libro;
+import core.model.Libreria;
+import core.model.Libro;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.function.Consumer;
 
+// Finestra(JDialog) per modificare un libro
 public class FinestraModifica extends JDialog {
     private JTextField titoloField = new JTextField(15);
     private JTextField autoreField = new JTextField(15);
