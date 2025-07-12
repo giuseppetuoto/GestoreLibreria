@@ -1,6 +1,6 @@
 package shapes.model;
 
-import json.LibreriaJson;
+import shapes.json.LibreriaJson;
 import memento.Memento;
 import shapes.researchstrategy.Ricerca;
 
@@ -61,6 +61,7 @@ public class Libreria extends AbstractLibreria {
         notifyObservers(new LibreriaEvent(this));
     }
 
+    // restituisce una copia della libreria che contiene i libri che soddisfano la ricerca
     public List<Libro> cercaLibri(Ricerca strategy) {
         List<Libro> ret = new ArrayList<>();
         for (Libro libro : libri) {
@@ -71,8 +72,9 @@ public class Libreria extends AbstractLibreria {
         return ret;
     }
 
+    // restituisce una copia ordinata della libreria originale
     public List<Libro> ordina(Comparator<Libro> criterio) {
-        List<Libro> L = getLibri();
+        List<Libro> L = new ArrayList<>(libri);
         L.sort(criterio);
         notifyObservers(new LibreriaEvent(this));
         return L;
