@@ -1,7 +1,8 @@
-package shapes.researchstrategy;
+package core.researchstrategy;
 
-import shapes.model.Libro;
+import core.model.Libro;
 
+// ConcreteStrategy
 public class RicercaGenere implements Ricerca {
     private final String genere;
 
