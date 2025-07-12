@@ -1,0 +1,106 @@
+[
+    {
+        "titolo": "Il fu Mattia Pascal",
+        "autore": "Luigi Pirandello",
+        "ISBN": "01",
+        "genere": "Romanzo",
+        "valutazione": 3,
+        "statoLettura": "LETTO"
+    },
+    {
+        "titolo": "1984",
+        "autore": "George Orwell",
+        "ISBN": "02",
+        "genere": "Fantasy",
+        "valutazione": 5,
+        "statoLettura": "LETTO"
+    },
+    {
+        "titolo": "Coscienza di Zeno",
+        "autore": "Italo Svevo",
+        "ISBN": "03",
+        "genere": "Romanzo",
+        "valutazione": 0,
+        "statoLettura": "DA_LEGGERE"
+    },
+    {
+        "titolo": "Fattoria degli animali",
+        "autore": "George Orwell",
+        "ISBN": "04",
+        "genere": "Fantasy",
+        "valutazione": 3,
+        "statoLettura": "LETTO"
+    },
+    {
+        "titolo": "Guerra e Pace",
+        "autore": "Lev Tolstoj",
+        "ISBN": "05",
+        "genere": "Romanzo",
+        "valutazione": 0,
+        "statoLettura": "DA_LEGGERE"
+    },
+    {
+        "titolo": "Orgoglio e Pregiudizio",
+        "autore": "Jane Austen",
+        "ISBN": "06",
+        "genere": "Commedia",
+        "valutazione": 0,
+        "statoLettura": "IN_LETTURA"
+    },
+    {
+        "titolo": "Uno, Nessuno, e centomila",
+        "autore": "Luigi Pirandello",
+        "ISBN": "07",
+        "genere": "Romanzo",
+        "valutazione": 2,
+        "statoLettura": "LETTO"
+    },
+    {
+        "titolo": "Il conte di Montecristo",
+        "autore": "Alexandre Dumas",
+        "ISBN": "08",
+        "genere": "Romanzo",
+        "valutazione": 0,
+        "statoLettura": "IN_LETTURA"
+    },
+    {
+        "titolo": "Ulisse",
+        "autore": "James Joyce",
+        "ISBN": "09",
+        "genere": "Romanzo",
+        "valutazione": 4,
+        "statoLettura": "LETTO"
+    },
+    {
+        "titolo": "Amleto",
+        "autore": "William Shakespeare",
+        "ISBN": "10",
+        "genere": "Tragedia",
+        "valutazione": 0,
+        "statoLettura": "DA_LEGGERE"
+    },
+    {
+        "titolo": "Harry Potter e la pietra filosofale",
+        "autore": "Rowling",
+        "ISBN": "11",
+        "genere": "Fantasy",
+        "valutazione": 1,
+        "statoLettura": "IN_LETTURA"
+    },
+    {
+        "titolo": "Senilità",
+        "autore": "Italo Svevo",
+        "ISBN": "12",
+        "genere": "Romanzo",
+        "valutazione": 5,
+        "statoLettura": "IN_LETTURA"
+    },
+    {
+        "titolo": "Fabbricante di lacrime",
+        "autore": "Erin Doom",
+        "ISBN": "13",
+        "genere": "Romanzo",
+        "valutazione": 5,
+        "statoLettura": "LETTO"
+    }
+]
