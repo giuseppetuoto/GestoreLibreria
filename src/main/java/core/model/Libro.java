@@ -1,4 +1,4 @@
-package shapes.model;
+package core.model;
 
 public class Libro implements Cloneable {
     private final String titolo;
@@ -22,8 +22,7 @@ public class Libro implements Cloneable {
 
         // Parametri opzionali
         private String genere = "";
-        private int valutazione = -1; // se il libro non è stato ancora letto completamente
-        // la valutazione è -1
+        private int valutazione = 0;
         private StatoLettura statoLettura = StatoLettura.DA_LEGGERE;
 
         public Builder(String titolo, String autore, String ISBN) {
@@ -93,7 +92,8 @@ public class Libro implements Cloneable {
     }
 
     // nel metodo clone() mi basta chiamare la clone() di Object con super.clone() perchè
-    // i campi di Libro sono tutti immutabili per definizione
+    // i campi di Libro sono tutti immutabili per definizione, quindi eseguo una copia
+    // superficiale, non serve fare una copia profonda
     @Override
     public Libro clone() {
         try{
