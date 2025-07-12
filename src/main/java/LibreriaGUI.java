@@ -1,14 +1,14 @@
 import command.Command;
 import command.HistoryHandler;
-import shapes.model.Libreria;
-import shapes.model.Libro;
-import shapes.researchstrategy.*;
-import shapes.sortingstrategy.OrdinaStato;
-import shapes.sortingstrategy.OrdinaTitolo;
-import shapes.sortingstrategy.OrdinaValutazione;
-import shapes.specificcommand.AddCommand;
-import shapes.specificcommand.EditCommand;
-import shapes.specificcommand.RemoveCommand;
+import core.model.Libreria;
+import core.model.Libro;
+import core.researchstrategy.*;
+import core.sortingstrategy.OrdinaStato;
+import core.sortingstrategy.OrdinaTitolo;
+import core.sortingstrategy.OrdinaValutazione;
+import core.specificcommand.AddCommand;
+import core.specificcommand.EditCommand;
+import core.specificcommand.RemoveCommand;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
