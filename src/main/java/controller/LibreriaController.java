@@ -1,3 +1,5 @@
+package controller;
+
 import command.Command;
 import command.HistoryHandler;
 import core.model.Libreria;
@@ -6,9 +8,9 @@ import core.researchstrategy.*;
 import core.sortingstrategy.OrdinaStato;
 import core.sortingstrategy.OrdinaTitolo;
 import core.sortingstrategy.OrdinaValutazione;
-import core.specificcommand.AddCommand;
-import core.specificcommand.EditCommand;
-import core.specificcommand.RemoveCommand;
+import command.AddCommand;
+import command.EditCommand;
+import command.RemoveCommand;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -17,7 +19,7 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
-public class LibreriaGUI extends JFrame {
+public class LibreriaController extends JFrame {
     private Libreria libreria;
     private HistoryHandler handler;
 
@@ -37,7 +39,7 @@ public class LibreriaGUI extends JFrame {
     private JTextField filtroGenere = new JTextField(10);
     private JComboBox<String> filtroStato = new JComboBox<>(new String[]{"Letto", "Da leggere", "In lettura"});
 
-    public LibreriaGUI(Libreria libreria, HistoryHandler handler) {
+    public LibreriaController(Libreria libreria, HistoryHandler handler) {
         this.libreria = libreria;
         this.handler = handler;
 
@@ -282,7 +284,7 @@ public class LibreriaGUI extends JFrame {
         return builder.build();
     }
 
-    private void refreshTable(List<Libro> libri) {
+    private void refreshTable(java.util.List<Libro> libri) {
         tableModel.setRowCount(0);
         for (Libro libro : libri) {
             tableModel.addRow(new Object[]{
@@ -295,21 +297,21 @@ public class LibreriaGUI extends JFrame {
     private void ricercaTitolo() {
         String titolo = searchTitoloField.getText().trim();
         Ricerca r = new RicercaTitolo(titolo);
-        List<Libro> libri = libreria.cercaLibri(r);
+        java.util.List<Libro> libri = libreria.cercaLibri(r);
         refreshTable(libri);
     }
 
     private void ricercaAutore() {
         String autore = searchAutoreField.getText().trim();
         Ricerca r = new RicercaAutore(autore);
-        List<Libro> libri = libreria.cercaLibri(r);
+        java.util.List<Libro> libri = libreria.cercaLibri(r);
         refreshTable(libri);
     }
 
     private void ricercaGenere() {
         String genere = filtroGenere.getText().trim();
         Ricerca r = new RicercaGenere(genere);
-        List<Libro> libri = libreria.cercaLibri(r);
+        java.util.List<Libro> libri = libreria.cercaLibri(r);
         refreshTable(libri);
     }
 
@@ -326,7 +328,7 @@ public class LibreriaGUI extends JFrame {
             }
         }
         Ricerca r = new RicercaStato(stato);
-        List<Libro> libri = libreria.cercaLibri(r);
+        java.util.List<Libro> libri = libreria.cercaLibri(r);
         refreshTable(libri);
     }
 
@@ -407,9 +409,5 @@ public class LibreriaGUI extends JFrame {
         dialog.pack();
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new LibreriaGUI(Libreria.getInstance(), new HistoryHandler()));
     }
 }
