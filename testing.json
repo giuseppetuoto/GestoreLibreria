@@ -1,0 +1,34 @@
+[
+    {
+        "titolo": "Il nome della rosa",
+        "autore": "Umberto Eco",
+        "ISBN": "01",
+        "genere": "Giallo",
+        "valutazione": 1,
+        "statoLettura": "IN_LETTURA"
+    },
+    {
+        "titolo": "La fattoria degli animali",
+        "autore": "George Orwell",
+        "ISBN": "02",
+        "genere": "Fantasy",
+        "valutazione": 3,
+        "statoLettura": "DA_LEGGERE"
+    },
+    {
+        "titolo": "1984",
+        "autore": "George Orwell",
+        "ISBN": "03",
+        "genere": "Fantasy",
+        "valutazione": 4,
+        "statoLettura": "LETTO"
+    },
+    {
+        "titolo": "Frankenstein",
+        "autore": "Mary Shelley",
+        "ISBN": "04",
+        "genere": "Fantascienza",
+        "valutazione": 3,
+        "statoLettura": "LETTO"
+    }
+]
