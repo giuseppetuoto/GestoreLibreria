@@ -1,6 +1,5 @@
-package core.specificcommand;
+package command;
 
-import command.Command;
 import memento.Memento;
 import core.model.Libreria;
 import core.model.Libro;
