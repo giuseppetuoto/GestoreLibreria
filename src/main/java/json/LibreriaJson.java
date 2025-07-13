@@ -55,7 +55,8 @@ public class LibreriaJson {
                 String isbn = obj.getString("ISBN", "");
                 String genere = obj.getString("genere", "");
                 int valutazione = obj.getInt("valutazione", 1);
-                Libro.StatoLettura stato = Libro.StatoLettura.valueOf(obj.getString("statoLettura", "DA_LEGGERE"));
+                Libro.StatoLettura stato = Libro.StatoLettura.valueOf
+                        (obj.getString("statoLettura", "DA_LEGGERE"));
 
                 Libro libro = new Libro.Builder(titolo, autore, isbn)
                         .genere(genere)
