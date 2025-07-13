@@ -1,3 +1,5 @@
+package controller;
+
 import core.model.Libreria;
 import core.model.Libro;
 
@@ -80,7 +82,7 @@ public class FinestraModifica extends JDialog {
                 }
 
                 onSalva.accept(nuovoLibro);
-                dispose();
+                dispose(); // chiude la finestra e rilascia le risorse
             }
         });
 
