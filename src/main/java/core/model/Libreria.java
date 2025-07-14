@@ -77,7 +77,7 @@ public class Libreria implements LibreriaIF {
     public Memento getMemento() {
         ArrayList<Libro> copia = new ArrayList<>();
         for (Libro libro : libri) {
-            copia.add(libro.clone()); // o new Libro(libro)
+            copia.add(libro.clone());
         }
         return new LibreriaMemento(copia);
     }
@@ -90,6 +90,7 @@ public class Libreria implements LibreriaIF {
         }else throw new IllegalArgumentException("Invalid memento");
     }
 
+    // un record è immutabile
     private record LibreriaMemento(ArrayList<Libro> libri) implements Memento {
     }
 
